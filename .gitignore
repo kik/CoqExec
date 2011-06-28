@@ -1,0 +1,4 @@
+*.vo
+*.glob
+*.d
+Makefile.bak
