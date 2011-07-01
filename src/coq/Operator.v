@@ -55,3 +55,4 @@ Notation "x < y <= z"  := (x < y  && y <= z) : ops_scope.
 Notation "x <= y < z"  := (x <= y && y < z) : ops_scope.
 Notation "x < y < z"   := (x < y  && y < z) : ops_scope.
 
+Delimit Scope ops_scope with O.
