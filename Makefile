@@ -99,6 +99,8 @@ PP:=-pp "$(CAMLP4BIN)$(CAMLP4)o -I $(CAMLLIB) -I . $(COQSRCLIBS) $(CAMLP4EXTEND)
 ###################################
 
 VFILES:=src/coq/Operator.v\
+  src/coq/Primitive.v\
+  src/coq/OCaml/Prelude.v\
   src/coq/Monad.v\
   src/coq/ST.v
 VOFILES:=$(VFILES:.v=.vo)
