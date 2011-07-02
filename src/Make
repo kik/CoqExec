@@ -1,6 +1,6 @@
--R src/coq CoqExec
-src/coq/Operator.v
-src/coq/Primitive.v
-src/coq/OCaml/Prelude.v
-src/coq/OCaml/PreludeLogic.v
+-R coq CoqExec
+coq/Operator.v
+coq/Primitive.v
+coq/OCaml/Prelude.v
+coq/OCaml/PreludeLogic.v
 

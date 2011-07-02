@@ -62,8 +62,8 @@ COQSRCLIBS:=-I $(COQLIB)/kernel -I $(COQLIB)/lib \
   -I $(COQLIB)/plugins/subtac/test \
   -I $(COQLIB)/plugins/syntax \
   -I $(COQLIB)/plugins/xml
-COQLIBS:= -R src/coq CoqExec
-COQDOCLIBS:=-R src/coq CoqExec
+COQLIBS:= -R coq CoqExec
+COQDOCLIBS:=-R coq CoqExec
 
 ##########################
 #                        #
@@ -98,13 +98,13 @@ PP:=-pp "$(CAMLP4BIN)$(CAMLP4)o -I $(CAMLLIB) -I . $(COQSRCLIBS) $(CAMLP4EXTEND)
 #                                 #
 ###################################
 
-VFILES:=src/coq/Operator.v\
-  src/coq/Primitive.v\
-  src/coq/OCaml/Prelude.v\
-  src/coq/OCaml/PreludeLogic.v
+VFILES:=coq/Operator.v\
+  coq/Primitive.v\
+  coq/OCaml/Prelude.v\
+  coq/OCaml/PreludeLogic.v
 VOFILES:=$(VFILES:.v=.vo)
-VOFILES1:=$(patsubst src/coq/%,%,$(filter src/coq/%,$(VOFILES)))
-VOFILES0:=$(filter-out src/coq/%,$(VOFILES))
+VOFILES1:=$(patsubst coq/%,%,$(filter coq/%,$(VOFILES)))
+VOFILES0:=$(filter-out coq/%,$(VOFILES))
 GLOBFILES:=$(VFILES:.v=.glob)
 VIFILES:=$(VFILES:.v=.vi)
 GFILES:=$(VFILES:.v=.g)
@@ -178,7 +178,7 @@ opt:
 
 install:
 	mkdir -p $(COQLIB)/user-contrib
-	(cd src/coq; for i in $(VOFILES1); do \
+	(cd coq; for i in $(VOFILES1); do \
 	 install -d `dirname $(COQLIB)/user-contrib/CoqExec/$$i`; \
 	 install $$i $(COQLIB)/user-contrib/CoqExec/$$i; \
 	 done)
