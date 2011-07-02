@@ -62,3 +62,9 @@ Fixpoint c (x : positive) : Integer :=
     | xI y => (1 + 1) * c y + 1
     | xO y => (1 + 1) * c y
   end%O.
+
+(* TODO: remove *)
+Axiom print_int : Integer -> unit.
+Extract Constant print_int => "print_int".
+
+Definition run_main (f : unit -> unit) := f tt.

@@ -2,3 +2,12 @@
 *.glob
 *.d
 Makefile.bak
+*.o
+*.cmi
+*.cmx
+*.a
+*.cmxa
+._ncdi
+.stamp
+src/html
+

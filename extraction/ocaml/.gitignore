@@ -1,0 +1,16 @@
+BinPos.ml
+BinPos.mli
+Datatypes.ml
+Datatypes.mli
+Logic.ml
+Logic.mli
+Operator.ml
+Operator.mli
+Peano.ml
+Peano.mli
+Prelude.ml
+Prelude.mli
+Primitive.ml
+Primitive.mli
+Specif.ml
+Specif.mli

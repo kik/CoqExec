@@ -1,4 +1,5 @@
 -R coq CoqExec
+-custom "touch .stamp" "$(VOFILES)" ".stamp"
 coq/Operator.v
 coq/Primitive.v
 coq/OCaml/Prelude.v

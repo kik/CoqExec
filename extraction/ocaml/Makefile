@@ -1,10 +1,16 @@
+STAMP = ../../src/.stamp
 
-all: extract
+all: extract .gitignore
+
+$(STAMP):
+	$(MAKE) -C ../../src
 
 extract: Extract.vo
 
-Extract.vo: Extract.v
+Extract.vo: Extract.v $(STAMP)
 	coqc -R ../../src/coq CoqExec Extract
+
+.PHONY: $(STAMP)
 
 EXTRACTED = \
   Peano.mli Peano.ml \
@@ -15,6 +21,9 @@ EXTRACTED = \
   Operator.mli Operator.ml \
   Primitive.mli Primitive.ml \
   Prelude.mli Prelude.ml
+
+.gitignore:
+	ls $(EXTRACTED) >$@
 
 clean::
 	rm -f *.vo *.glob $(EXTRACTED)

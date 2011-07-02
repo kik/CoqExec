@@ -111,7 +111,7 @@ GFILES:=$(VFILES:.v=.g)
 HTMLFILES:=$(VFILES:.v=.html)
 GHTMLFILES:=$(VFILES:.v=.g.html)
 
-all: $(VOFILES) 
+all: $(VOFILES) .stamp
 spec: $(VIFILES)
 
 gallina: $(GFILES)
@@ -137,6 +137,15 @@ all-gal.pdf: $(VFILES)
 	$(COQDOC) -toc -pdf -g $(COQDOCLIBS) -o $@ `$(COQDEP) -sort -suffix .v $(VFILES)`
 
 
+
+###################
+#                 #
+# Custom targets. #
+#                 #
+###################
+
+.stamp: $(VOFILES)
+	touch .stamp
 
 ####################
 #                  #
@@ -191,6 +200,7 @@ clean:
 	rm -f $(CMOFILES) $(CMIFILES) $(CMXFILES) $(CMXSFILES) $(OFILES) $(VOFILES) $(VIFILES) $(GFILES) $(MLFILES:.ml=.cmo) $(MLFILES:.ml=.cmx) *~
 	rm -f all.ps all-gal.ps all.pdf all-gal.pdf all.glob $(VFILES:.v=.glob) $(HTMLFILES) $(GHTMLFILES) $(VFILES:.v=.tex) $(VFILES:.v=.g.tex) $(VFILES:.v=.v.d)
 	- rm -rf html
+	- rm -f .stamp
 
 archclean:
 	rm -f *.cmx *.o
