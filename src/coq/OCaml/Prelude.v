@@ -25,17 +25,11 @@ Module Axioms.
     Extract Constant minus => "(-)".
     Extract Constant opp => "(~-)".
     Extract Constant zero => "0".
-    Extract Constant mul => "(*)".
+    Extract Constant mul => "( * )".
     Extract Constant one => "1".
     Extract Constant lt => "(<)".
     Extract Constant le => "(<=)".
     Extract Constant eq => "(=)".
-
-    Axiom addC : forall x y, plus x y = plus y x.
-    Axiom addA : forall x y z, plus (plus x y) z = plus x (plus y z).
-    Axiom add0 : forall x, plus zero x = x.
-    Axiom sub0 : forall x, minus zero x = opp x.
-    Axiom addN : forall x, plus (opp x) x = zero.
   End Int.
 End Axioms.
 
